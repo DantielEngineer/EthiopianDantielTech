@@ -1,139 +1,110 @@
-CSS
-/* መሠረታዊ ቅንብሮች */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdfaf5;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* የራስጌ (Header) ክፍል */
-header {
+    background-color: #f9f9f9;
     text-align: center;
-    background-color: #f8f1e7;
-    padding: 60px 20px;
-    border-bottom: 8px solid #d4af37;
 }
 
-header h1 {
-    color: #8b4513;
-    margin-bottom: 10px;
+header {
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
 }
 
-/* የማውጫ (Nav) ክፍል */
-nav {
-    margin-top: 20px;
-}
-
-nav a {
+header nav a {
+    color: white;
     margin: 0 15px;
     text-decoration: none;
-    color: #8b4513;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #d4af37;
-}
-
-/* ስለ እኔ (About Section) */
-.about-section {
-    background-color: #fef1e1;
-    padding: 40px;
-    margin: 40px auto;
-    border-radius: 20px;
-    max-width: 700px;
-    border-left: 10px solid #d4af37;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.about-content h3 {
-    color: #8b4513;
-    font-size: 1.8rem;
-}
-
-/* የምስል ማሳያ ካርዶች (Gallery Cards) */
-.photo-container {
+/* የዋናው ፎቶ መጠን መቆጣጠሪያ */
+.hero-image {
+    max-width: 800px; /* ፎቶው ከዚህ በላይ አይሰፋም */
+    margin: 20px auto;
     background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hero-image {
+    max-width: 600px; /* ምስሉን የያዘው ሳጥን ከ600 ፒክስል በላይ እንዳይሰፋ (በፊት 800 ነበር) */
+    margin: 20px auto; /* ከመካከለኛው በኩል እንዲቀመጥ (Center) */
+    background: white; /* ከምስሉ ጀርባ ነጭ ቀለም */
+    padding: 10px; /* በምስሉ እና በሳጥኑ ጠርዝ መካከል ትንሽ ክፍተት */
+    border-radius: 10px; /* የሳጥኑ ማዕዘኖች እንዲታጠፉ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ትንሽ ጥላ */
+}
+
+.hero-image img {
+    width: 100%; /* የሳጥኑን ስፋት ሙሉ በሙሉ እንዲይዝ */
+    height: 400px; /* ቁመቱን በ400 ፒክስል ገድበነዋል (ቁመቱን እንደፈለግሽ መጨመር ወይም መቀነስ ትችያለሽ) */
+    object-fit: contain; /* ምስሉ እንዳይቆረጥ፣ ሙሉ በሙሉ በ400px ቁመት ውስጥ እንዲታይ እና መጠኑ እንዲስተካከል ያደርጋል። ይህ ዋናው ማስተካከያ ነው። */
+    border-radius: 5px; /* የምስሉ ማዕዘኖች እንዲታጠፉ */
+}
+
+/* ለስልክ (Mobile) የሚሆን ማስተካከያ */
+@media (max-width: 600px) {
+    .hero-image img {
+        height: auto; /* በስልክ ላይ ሲታይ ቁመቱ ራሱ እንዲስተካከል */
+    }
+}
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    margin-bottom: 30px;
-}
-
-.photo-container:hover {
-    transform: scale(1.05); /* ትንሽ ከፍ እንዲል */
-}
-
-.photo-container img {
-    max-width: 100%;
-    height: auto;
+    background: white;
     border-radius: 10px;
 }
 
-/* የጋለሪ (Gallery Grid) ክፍል */
+/* ስራዎች ማሳያ (Segmented Grid) */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 .gallery-item {
     background: white;
     padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
-.item-info {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #8b4513;
-}
-
-/* የመገናኛ ቁልፍ (Contact Button) */
 .contact-btn {
-    background-color: #d4af37;
-    color: white !important;
-    padding: 15px 40px;
+    background-color: #8b4513;
+    color: white;
+    padding: 15px 25px;
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
+    border-radius: 5px;
     display: inline-block;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
-.contact-btn:hover {
-    background-color: #b8962d;
-    transform: translateY(-3px);
-}
-
-/* ግርጌ (Footer) */
-footer {
-    background-color: #333;
-    color: #fff !important;
+.contact-container {
+    margin: 50px auto;
+    max-width: 500px;
+    background: white;
     padding: 30px;
-    margin-top: 60px;
+    border-radius: 10px;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #ccc;
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
 }
