@@ -9,3 +9,10 @@ cd /sdcard
 ls
 cd portifolio
 ls /storage/emulated/0
+bash
+git add
+git commit -m "ማስተካከያ ተደርጓል"
+git push
+git add
+git commit -m "ማስተካከያ ተደርጓል"
+git push
