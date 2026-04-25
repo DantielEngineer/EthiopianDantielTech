@@ -1,183 +1,92 @@
 <!DOCTYPE html>
-<html lang="am">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>አንጓች - የዳንቴል ጥበብ</title>
+    <title>Dantiel Engineer - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 1. መሠረታዊ ዲዛይን */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fdfaf5;
-            color: #333;
-            line-height: 1.6;
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: #fff; padding: 15px 0; text-align: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');
+            background-size: cover; background-position: center; height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center;
         }
-
-        /* 2. የራስጌ ክፍል (Header) */
-        header {
-            text-align: center;
-            background-color: #f8f1e7;
-            padding: 30px 20px;
-            border-bottom: 5px solid #d4af37;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #8b4513;
-        }
-
-        /* 3. ዋና ምስል (Hero Image) - አነስ ተደርጎ የተሰራ */
-        .hero-section {
-            text-align: center;
-            padding: 20px;
-            background: white;
-        }
-
-        .hero-image-small {
-            max-width: 300px; /* መጠኑን አነስ አደረግነው */
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 2px solid #d4af37;
-        }
-
-        /* 4. ስለ እኔ (About Section) */
-        .about-section {
-            background-color: #fef1e1;
-            padding: 25px;
-            margin: 20px auto;
-            border-radius: 20px;
-            max-width: 700px;
-            border-left: 5px solid #d4af37;
-            text-align: center;
-        }
-
-        /* 5. የስራዎች ማሳያ (Segmented Gallery) */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .photo-card {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 1px solid #eee;
-            transition: transform 0.3s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-10px); /* ሲነካ ወደ ላይ ከፍ እንዲል */
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        /* 6. የቴሌግራም ቁልፍ (Contact Button) */
-        .contact-btn {
-            background-color: #d4af37;
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 30px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .contact-btn:hover {
-            background-color: #b8962d;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #f8f1e7;
-            color: #888;
-            margin-top: 40px;
-        }
+        .join-btn { background-color: #f0c14b; color: black; padding: 15px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .container { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; }
+        .contact-box { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .tg-btn { background-color: #0088cc; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .submit-btn { background-color: #333; color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
+        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>አንጓች የዳንቴል ስራዎች</h1>
-    <p>ጥራት ያላቸው የኢትዮጵያ ባህላዊ የዳንቴል ስራዎች</p>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
+        <a href="#">Home</a>
+        <a href="#work">Our Work</a>
+        <a href="#hats">Hats</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<main>
-    <section class="hero-section">
-        <h2>እንኳን በደህና መጡ!!!</h2>
-        <img src="croptop.jpg" alt="አንጓች የዳንቴል ስራ" class="hero-image-small">
-        <p style="margin-top: 10px; font-weight: bold;">ቴክኖሎጂውን ከጥበብ ጋር በማጣመር</p>
-    </section>
+<section class="hero">
+    <h1>እንኳን ደህና መጡ</h1>
+    <p>Dantiel Engineer - ጥበብ ከቴክኖሎጂ ጋር</p>
+    <a href="#hats" class="join-btn">JOIN MY CRAFT WORLD</a>
+</section>
 
-    <section class="about-section">
-        <h3>ስለ እኔ</h3>
-        <p>
-            ሰላም! ስሜ <b>አንጓች ምስጋነው</b> እባላለሁ። የኮምፒውተር ኢንጅነር እና ጎን ለጎን ደግሞ የተለያዩ ከክር የሚሰሩ ባህላዊ የዳንቴል አልባሳትን እና ጌጣጌጦችን እሰራለሁ። 
-            ቴክኖሎጂውን ከጥበብ ጋር በማጣመር ለቤትዎ ማድመቂያ እና ለብርድ የሚውሉ አልባሳትን ጥራት ያላቸውና በዘመናዊ ዲዛይን የተሰሩ ስራዎችን አቀርባለሁ።
-        </p>
-    </section>
+<section id="work" class="container">
+    <h2 class="section-title">የእጅ ስራዎቼ</h2>
+    <div class="grid">
+        <div class="card"><img src="croptop.jpg" alt="croptop"><h3>Crop Top</h3></div>
+        <div class="card"><img src="boy.jpg" alt="Boy Style"><h3>Boy Style</h3></div>
+        <div class="card"><img src="sweater.jpg" alt="sweater"><h3>Sweater</h3></div>
+        <div class="card"><img src="crochet.jpg" alt="Crochet Art"><h3>Crochet Art</h3></div>
+    </div>
+</section>
 
-    <h2 style="text-align: center; color: #8b4513;">የስራዎቼ ማሳያ</h2>
-
-    <div class="gallery-container">
-        <div class="photo-card">
-            <img src="crochet.jpg" alt="የሴት ልጅ ቀሚስ">
-            <h3>የሴት ልጅ ቀሚስ</h3>
-            <p>በጥንቃቄ የተሰራ ደስ የሚል ቀሚስ</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="boy.jpg" alt="የወንድ ልጅ ሹራብ">
-            <h3 style="color: green;">የወንድ ልጅ ሹራብ</h3>
-            <p>ለብርድና ለመዘነጥ የሚሆን</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="sweater.jpg" alt="ዘመናዊ ሹራብ">
-            <h3>ዘመናዊ ሹራብ</h3>
-            <p>በጥራት የተመረጠ ክር</p>
-        </div>
-
-        <div class="photo-card">
-            <img src="dantiel.jpg" alt="ባህላዊ ዳንቴል">
-            <h3>ባህላዊ ዳንቴል</h3>
-            <p>ለቤት ማስጌጫ የሚሆን</p>
+<section id="hats" style="background-color: #eee;">
+    <div class="container">
+        <h2 class="section-title">የኮፍያ ስብስቦች (Hats)</h2>
+        <div class="grid">
+            <div class="card"><img src="hat1.jpg" alt="Hat 1"><h3>ኮፍያ 1</h3></div>
+            <div class="card"><img src="hat2.jpg" alt="Hat 2"><h3> ኮፍያ 2 </h3></div>
+            <div class="card"><img src="hat3.jpg" alt="Hat 3"><h3>ኮፍያ 3</h3></div>
+            <div class="card"><img src="hat4.jpg" alt="Hat 4"><h3>ኮፍያ 4</h3></div>
         </div>
     </div>
+</section>
 
-    <div style="text-align: center;">
-        <a href="https://t.me/251977612199" class="contact-btn">
-            በቴሌግራም አግኙኝ
-        </a>
+<section id="contact" class="container">
+    <h2 class="section-title">ያናግሩን (Contact Us)</h2>
+    <div class="contact-box">
+<a href="https://t.me/+wAph9F_3GwswMjdk" target="_blank" class="tg-btn">
+    <i class="fab fa-telegram-plane"></i> አንጓች የእጅ ስራ ጥበብ (Join Group)
+</a>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+        <form action="https://formspree.io/f/mdayzrje" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="ሙሉ ስምዎ" required>
+            <input type="email" name="_replyto" placeholder="የኢሜይል አድራሻ" required>
+            <textarea name="message" rows="4" placeholder="መልእክትዎ..." required></textarea>
+            <button type="submit" class="submit-btn">ኢሜይል ላክ</button>
+        </form>
     </div>
-</main>
+</section>
 
 <footer>
-    <p>© 2026 አንጓች - ኮምፒውተር ኢንጅነር እና የዳንቴል ባለሙያ</p>
-    <p>አድራሻ፡ 0977612199</p>
+    <p>&copy; 2026 Dantiel Engineer | Addis Ababa, Ethiopia</p>
+    <p>Email: dantielengineer@gmail.com</p>
 </footer>
 
 </body>
