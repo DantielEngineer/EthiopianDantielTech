@@ -1,110 +1,66 @@
+* አጠቃላይ የገጹ ገጽታ */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* ለስላሳ ባግራውንድ */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #333;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    text-align: center;
+}
+/* የናቪጌሽን ባር ስታይል */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* ጥቁር ሰማያዊ */
+    padding: 15px 30px;
+    color: white;
 }
 
-header {
-    background-color: #8b4513;
-    color: white;
-    padding: 20px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* በሊንኮቹ መካከል ክፍተት እንዲኖር */
 }
 
-header nav a {
+.nav-links a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
-/* የዋናው ፎቶ መጠን መቆጣጠሪያ */
-.hero-image {
-    max-width: 800px; /* ፎቶው ከዚህ በላይ አይሰፋም */
-    margin: 20px auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.nav-links a:hover {
+    color: #e67e22; /* ማውሱ ሲያርፍበት ቀለሙ ይለወጣል */
 }
 
-.hero-image {
-    max-width: 600px; /* ምስሉን የያዘው ሳጥን ከ600 ፒክስል በላይ እንዳይሰፋ (በፊት 800 ነበር) */
-    margin: 20px auto; /* ከመካከለኛው በኩል እንዲቀመጥ (Center) */
-    background: white; /* ከምስሉ ጀርባ ነጭ ቀለም */
-    padding: 10px; /* በምስሉ እና በሳጥኑ ጠርዝ መካከል ትንሽ ክፍተት */
-    border-radius: 10px; /* የሳጥኑ ማዕዘኖች እንዲታጠፉ */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ትንሽ ጥላ */
+/* ዋናው መግቢያ ርዕስ (ከ h5 ወደ h2 ብትቀይረው ይመረጣል) */
+.main-title {
+    font-size: 3rem; /* ትልቅ እና ጎላ ያለ */
+    color: #2c3e50; /* ጥቁር ሰማያዊ */
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
-.hero-image img {
-    width: 100%; /* የሳጥኑን ስፋት ሙሉ በሙሉ እንዲይዝ */
-    height: 400px; /* ቁመቱን በ400 ፒክስል ገድበነዋል (ቁመቱን እንደፈለግሽ መጨመር ወይም መቀነስ ትችያለሽ) */
-    object-fit: contain; /* ምስሉ እንዳይቆረጥ፣ ሙሉ በሙሉ በ400px ቁመት ውስጥ እንዲታይ እና መጠኑ እንዲስተካከል ያደርጋል። ይህ ዋናው ማስተካከያ ነው። */
-    border-radius: 5px; /* የምስሉ ማዕዘኖች እንዲታጠፉ */
+/* ንዑስ መግቢያ ጽሁፍ */
+.sub-title {
+    font-size: 1.2rem;
+    color: #e67e22; /* ብርቱካናማ - ለየት ያለ ለውጥ ይሰጠዋል */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 400;
 }
 
-/* ለስልክ (Mobile) የሚሆን ማስተካከያ */
-@media (max-width: 600px) {
-    .hero-image img {
-        height: auto; /* በስልክ ላይ ሲታይ ቁመቱ ራሱ እንዲስተካከል */
-    }
-}
-}
-
-.about-section {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-}
-
-/* ስራዎች ማሳያ (Segmented Grid) */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.gallery-item {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.contact-btn {
-    background-color: #8b4513;
-    color: white;
-    padding: 15px 25px;
+/* ለሊንኮች እና በተኖች (Hover effect) */
+a {
+    color: #2980b9;
     text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
+    transition: 0.3s;
 }
 
-.contact-container {
-    margin: 50px auto;
-    max-width: 500px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-footer {
-    background: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
+a:hover {
+    color: #e67e22;
 }

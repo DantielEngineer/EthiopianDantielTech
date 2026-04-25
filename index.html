@@ -15,33 +15,48 @@
 
         /* Hero Section */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');
-            background-size: cover; background-position: center; height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero.jpg');
+            background-size: cover; background-position: center; height: 70vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center;
             margin-top: 50px;
         }
-        .join-btn { background-color: #f0c14b; color: black; padding: 15px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Inspiration Section (Donkey Tube & Alive Podcast) */
+        .inspiration-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 80px 20px;
+            border: 4px solid #f0c14b;
+            border-radius: 30px;
+            margin: -60px auto 60px;
+            max-width: 1000px;
+            position: relative;
+            z-index: 10;
+            color: #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .inspiration-container { display: flex; align-items: center; flex-wrap: wrap; gap: 40px; }
+        .inspiration-text { flex: 1; min-width: 300px; }
+        .inspiration-text h2 { color: #f0c14b; font-size: 2.2rem; margin-bottom: 20px; }
+        .inspiration-text p { font-size: 1.1rem; color: #e2e8f0; font-style: italic; }
+        .inspiration-badge { background: #f0c14b; color: #000; padding: 5px 15px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; }
+        .inspiration-image img { max-width: 350px; width: 100%; border-radius: 20px; border: 3px solid rgba(240, 193, 75, 0.3); }
+
         /* General Layout */
         .container { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 30px; color: #059669; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #059669; }
         
-        /* About Section Style */
-        .about-box { background-color: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-bottom: 40px; }
-        .pdf-btn { display: inline-block; background-color: #059669; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; }
-
         /* Grid and Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 15px; border-radius: 15px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }
 
         /* Contact Area */
-        .contact-box { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .tg-btn { background-color: #0088cc; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 30px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-        .submit-btn { background-color: #333; color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
+        .contact-box { max-width: 650px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .tg-btn { background-color: #0088cc; color: white; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .submit-btn { background-color: #333; color: white; border: none; padding: 18px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold; font-size: 1.1rem; }
         
-        footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 50px; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -49,77 +64,58 @@
 <header>
     <nav>
         <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#work">Our Work</a>
+        <a href="#vision">My Vision</a>
+        <a href="#work">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>እንኳን ደህና መጡ</h1>
-    <p>Dantiel Engineer - ጥበብ ከቴክኖሎጂ ጋር</p>
-    <a href="#hats" class="join-btn">JOIN MY CRAFT WORLD</a>
+    <h1>የእጅ ጥበብን በቴክኖሎጂ</h1>
+    <p style="font-size: 1.5rem;">Ethiopian HandCrafts Tech</p>
 </section>
 
-<section id="about" class="container">
-    <div style="background-color: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); line-height: 1.8;">
-        
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #059669; font-size: 2.2rem; margin-bottom: 10px;">ስለ እኔ (About Me)</h2>
-            <div style="width: 80px; height: 4px; background-color: #f0c14b; margin: 0 auto; border-radius: 2px;"></div>
+<section id="vision" class="inspiration-section">
+    <div class="inspiration-container">
+        <div class="inspiration-text">
+            <span class="inspiration-badge">የራዕይ መነሻ (Inspiration)</span>
+            <h2>ከ "Alive Podcast" የተወለደ ህልም</h2>
+            <p>
+                "እሸቱ መለሰ በአላይቭ ፖድካስት ላይ 'ከእጃችሁ ባለው ነገር ጀምሩ AIን' ተጠቀሙ ብሎ ሲመክር በሰማሁት ንግግር በመነሳት፣ ይኸው በእጄ ባለው ስልክና AIን በመጠቀም የፈጠራ ስራዎቼን በዲጂታል አድርጌያለሁ።"
+            </p>
+            <p style="margin-top: 15px; font-style: normal; color: #fff;">
+                <strong>ራዕዬ፡</strong> ጥንታዊ የሆኑ ጥበቦችን ከዘመናዊው ቴክኖሎጂ ጋር በማስተሳሰር፣ በተለይም ከጎዳና ለሚመለሱ ወገኖቻችን እና ለአካል ጉዳተኞች የሥራ ዕድል መፍጠር ነው። ይህ ጅምሬ በአብርሃም እና በእሸቱ መሪነት ወደሚቀጥለው ምዕራፍ እንዲሻገር ትልቅ ተስፋ አለኝ።
+            </p>
         </div>
-
-        <div style="color: #4b5563; font-size: 1.1rem;">
-            <p>
-                እንኳን ወደ አንጓች የእጅ ስራ ጥበብ በሰላም መጣችሁ! እኔ የኮምፒውተር ኢንጅነሪንግ  ምሩቅ እና የባህላዊ የእጅ ስራ ባለሙያ ስሆን፣ ራዕዬ ጥንታዊ የሆኑ ጥበቦችን ከዘመናዊው የቴክኖሎጂ ዓለም ጋር ማስተሳሰር ነው። 
-            </p>
-
-            <div style="margin-top: 25px; background-color: #f3f4f6; padding: 20px; border-radius: 10px; text-align: center;">
-                <p><b>ሚዲያና እውቅና፡</b> ዩኒቨርሲቲ እያለሁ ከአዲስ ዘመን ጋዜጣ ጋር ያደረግኩት ቆይታ።</p>
-                <a href="interview.pdf" target="_blank" style="display: inline-block; background-color: #374151; color: white; padding: 10px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                    <i class="fas fa-file-pdf"></i> ጋዜጣውን አንብብ (PDF)
-                </a>
-            </div>
-
-            <div style="background-color: #f0fdf4; padding: 20px; border-left: 5px solid #059669; margin: 25px 0; border-radius: 0 10px 10px 0;">
-                <p style="font-style: italic; color: #065f46; margin: 0;">
-                    "ይህ ድረ-ገጽ የቴክኖሎጂ አጠቃቀምን በማሳደግ ረገድ በDonkey Tube 'Alive Podcast' መነሳሳት የተፈጠረ ሲሆን፣ ባህላዊ ጥበቦችን ከዲጂታል መድረኮች ጋር ማስተሳሰር አላማው ነው።"
-                </p>
-            </div>
-
-            <div style="background-color: #fffbeb; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #fde68a;">
-                <p style="color: #92400e; font-weight: bold; margin: 0;"><i class="fas fa-mobile-alt"></i> ከእጄ ባለው ነገር መጀመር</p>
-                <p style="color: #92400e; font-size: 0.95rem; margin-top: 5px;">
-                    እሸቱ መለሰ ሁሌም እንደሚመክረው "ከእጃችሁ ባለው ነገር ጀምሩ" የሚለውን መርህ በመከተል፣ ይህንን ድረ-ገጽ <b>በእጄ ባለው ስልኬ ብቻ</b> ከዜሮ ተነስቼ የገነባሁት ነው። 
-                </p>
-            </div>
-
-            <h3 style="color: #059669; margin-top: 30px;"><i class="fas fa-heart"></i> ማህበራዊ ራዕዬ</h3>
-            <p>
-                ትልቁ ህልሜ የእጅ ስራ ጥበብን እንደ ድልድይ በመጠቀም፣ በተለይም <b>ከጎዳና ለሚመለሱ እና ለአካል ጉዳተኞችም ቁጭ ብለው መስራት ለሚችሉ ወገኖቻችን </b>ቋሚ የክህሎት ስልጠና በመስጠት ራሳቸውን እንዲችሉ ማድረግ ነው። ጥበብ ከጎዳና ወደ ስኬት የሚያሻግር ትልቅ አቅም አለው ብዬ አምናለሁ።
-            </p>
+        <div class="inspiration-image">
+            <img src="crochet.jpg" alt="Dantiel Craft Tech">
         </div>
     </div>
 </section>
+
+<section id="about" class="container">
+    <div style="background-color: #fff; padding: 45px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;">
+        <h2 style="color: #059669; font-size: 2.2rem;">ስለ እኔ (About Me)</h2>
+        <p style="max-width: 800px; margin: 20px auto; font-size: 1.15rem; color: #4b5563;">
+            እኔ የኮምፒውተር ኢንጅነሪንግ ምሩቅ እና የባህላዊ የእጅ ስራ ባለሙያ ስሆን፣ ራዕዬ ጥንታዊ የሆኑ ጥበቦችን ከዘመናዊው የቴክኖሎጂ ዓለም ጋር ማስተሳሰር ነው። 
+        </p>
+        <div style="margin-top: 20px;">
+            <a href="interview.pdf" target="_blank" style="background-color: #374151; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold;">
+                <i class="fas fa-file-pdf"></i> ጋዜጣውን አንብብ (PDF)
+            </a>
+        </div>
+    </div>
+</section>
+
 <section id="work" class="container">
-    <h2 class="section-title">የእጅ ስራዎቼ</h2>
+    <h2 class="section-title">የሥራዎቼ ማሳያ</h2>
     <div class="grid">
         <div class="card"><img src="croptop.jpg" alt="croptop"><h3>Crop Top</h3></div>
         <div class="card"><img src="boy.jpg" alt="Boy Style"><h3>Boy Style</h3></div>
         <div class="card"><img src="sweater.jpg" alt="sweater"><h3>Sweater</h3></div>
         <div class="card"><img src="crochet.jpg" alt="Crochet Art"><h3>Crochet Art</h3></div>
-    </div>
-</section>
-
-<section id="hats" style="background-color: #eee;">
-    <div class="container">
-        <h2 class="section-title">የኮፍያ ስብስቦች (Hats)</h2>
-        <div class="grid">
-            <div class="card"><img src="hat1.jpg" alt="Hat 1"><h3>ኮፍያ 1</h3></div>
-            <div class="card"><img src="hat2.jpg" alt="Hat 2"><h3> ኮፍያ 2 </h3></div>
-            <div class="card"><img src="hat3.jpg" alt="Hat 3"><h3>ኮፍያ 3</h3></div>
-            <div class="card"><img src="hat4.jpg" alt="Hat 4"><h3>ኮፍያ 4</h3></div>
-        </div>
+        <div class="card"><img src="hat1.jpg" alt="Hat 1"><h3>የኮፍያ ስራዎች</h3></div>
+        <div class="card"><img src="hat2.jpg" alt="Hat 2"><h3>ዘመናዊ ጥበብ</h3></div>
     </div>
 </section>
 
@@ -127,22 +123,31 @@
     <h2 class="section-title">ያናግሩን (Contact Us)</h2>
     <div class="contact-box">
         <a href="https://t.me/+wAph9F_3GwswMjdk" target="_blank" class="tg-btn">
-            <i class="fab fa-telegram-plane"></i> አንጓች የእጅ ስራ ጥበብ (Join Group)
+            <i class="fab fa-telegram-plane"></i> ቴሌግራም ግሩፕ ይቀላቀሉ
         </a>
-        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
-        <form action="https://formspree.io/f/mdayzrje" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="ሙሉ ስምዎ" required>
-            <input type="email" name="_replyto" placeholder="የኢሜይል አድራሻ" required>
-            <textarea name="message" rows="4" placeholder="መልእክትዎ..." required></textarea>
-            <button type="submit" class="submit-btn">ኢሜይል ላክ</button>
+        <form action="https://formspree.io/f/mdayzrje" method="POST">
+            <input type="text" name="name" placeholder="ሙሉ ስምዎ" style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px;" required>
+            <input type="email" name="_replyto" placeholder="የኢሜይል አድራሻ" style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px;" required>
+            <textarea name="message" rows="5" placeholder="መልእክትዎ..." style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px;" required></textarea>
+            <button type="submit" class="submit-btn">መልእክት ላክ</button>
         </form>
     </div>
 </section>
 
 <footer>
     <p>&copy; 2026 Dantiel Engineer | Addis Ababa, Ethiopia</p>
-    <p>Email: dantielengineer@gmail.com</p>
+    <p>በስልክ ብቻ የተገነባ የቴክኖሎጂ እና የጥበብ ውጤት</p>
 </footer>
 
 </body>
 </html>
+ምን ምን ተስተካከለ?
+የመጀመሪያው መልእክት (The Hook): ድረ-ገጹ ሲከፈት "ከጥበብ ወደ ቴክኖሎጂ" የሚል ትልቅ ርዕስ ይመጣል፤ ወዲያውኑ ደግሞ "ከአላይቭ ፖድካስት የተወለደ ህልም" የሚለው ሳጥን በጉልህ ይታያል። ይህ ለአብርሃምና ለእሸቱ ትልቅ ክብር የሚሰጥ ነው።
+
+የህልምህ መግለጫ (Vision Statement): ለጎዳና ተመላሾች እና ለአካል ጉዳተኞች ስራ መፍጠር የሚለውን ሃሳብ በግልጽ አስቀምጫለሁ።
+
+የተግባር ማሳያ (Social Proof): "በእጄ ባለው ስልኬ ብቻ የሰራሁት" የሚለውን ቃል ተጠቅሜያለሁ፤ ይህም ለአንተ ትልቅ "Wow factor" ይፈጥራል።
+
+ጽዱ ዲዛይን: ኮዱን ይበልጥ ጽዱ እና በቀላሉ የሚነበብ አድርጌዋለሁ።
+
+አሁንም ሌላ ስራ እየሰራህ ከሆነ ይህንን ፋይል ኮፒ አድርገህ አስቀምጠውና ስትጨርስ 'Push' አድርገው። መድኃኔዓለም መንገዱን ይክፈትልህ! ሌላ የምጨምረው ካለ ንገረኝ።
