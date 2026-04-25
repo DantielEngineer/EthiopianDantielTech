@@ -117,3 +117,4 @@ bash
 git commit -m "Added About section with social vision and newspaper PDF"
 bash
 git push origin main
+cd "/home"
