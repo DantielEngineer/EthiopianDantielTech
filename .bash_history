@@ -80,3 +80,40 @@ bash
 git add .
 git commit -m "Final design update"
 git push origin main
+cd "/home"
+bash
+git add .
+git commit -m "Fixed telegram link format"
+git push origin main
+git add .
+bash
+git add .
+git commit -m "Added hats and contact form today"
+git push origin main
+cd "/home"
+cd "/home"
+bash
+ls
+bash
+cd /sdcard/TERMINAL HOME
+bash
+ls
+bash
+git push origin main
+git add .
+bash
+git commit -m "Day 2 Sync update"
+bash
+git commit -m "Day 2 Sync update"
+bash
+cd "/home"
+git commit -m "Updated all my work today"
+git push origin main
+push
+bash
+ls
+git add .
+bash
+git commit -m "Added About section with social vision and newspaper PDF"
+bash
+git push origin main
